@@ -8,8 +8,10 @@ from .forms import ReviewForm
 def review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
-        print(entered_username)
-        return HttpResponseRedirect("/thank_you")
+        
+        if form.is_valid():
+            print(form.cleaned_data)
+            return HttpResponseRedirect("/thank_you")
     
     form = ReviewForm
     return render(request, "reviews/review.html", {

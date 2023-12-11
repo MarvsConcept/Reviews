@@ -14,4 +14,13 @@ def review(request):
             return HttpResponseRedirect("/thank_you")
     
     else:
-  
+        form = ReviewForm()
+    
+    return render(request, "reviews/review.html", {
+        "form":form
+    })
+
+def thank_you(request):
+    return render(request, "reviews/thank_you.html", {
+        "has_error":False
+    })

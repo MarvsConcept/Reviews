@@ -28,20 +28,25 @@ class ReviewView(View):
     })
     
 
-def review(request):
-    if request.method == 'POST':
-        form = ReviewForm(request.POST,)
+# def review(request):
+#     if request.method == 'POST':
+#         form = ReviewForm(request.POST,)
         
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect("/thank_you")
+#         if form.is_valid():
+#             form.save()
+#             return HttpResponseRedirect("/thank_you")
     
-    else:
-        form = ReviewForm()
+#     else:
+#         form = ReviewForm()
     
-    return render(request, "reviews/review.html", {
-        "form":form
-    })
+#     return render(request, "reviews/review.html", {
+#         "form":form
+#     })
+
+class thank_youView(View):
+    def get(self, request):
+        return render(request, "reviews/thank_you.html",)
+        
 
 def thank_you(request):
     return render(request, "reviews/thank_you.html", {

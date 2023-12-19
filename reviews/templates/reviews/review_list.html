@@ -7,7 +7,7 @@ All Reviews
 {% block content %}
     <ul>
         {% for review in reviews %}
-            <li>{{review.id}} {{ review.user_name }} (Rating : {{ review.rating }})</li>
+            <li>{{ review.user_name }} <br> (Rating : {{ review.rating }}) <hr></li>
         {% endfor %}
     </ul>
 {% endblock %}

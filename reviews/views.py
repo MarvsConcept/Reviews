@@ -18,6 +18,8 @@ class ReviewView(CreateView):
     success_url = "/thank_you"
     
     
+    
+    
 # class ReviewView(FormView):
 #     template_name = "reviews/review.html"
 #     form_class = ReviewForm
